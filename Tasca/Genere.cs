@@ -2,7 +2,7 @@
 
 public enum Genere
 {
-    Homa,
-    Dona,
-    Null
+    Homa = 1,
+    Dona = 2,
+    Null = 0
 }
