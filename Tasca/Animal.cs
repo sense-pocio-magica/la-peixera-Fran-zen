@@ -2,19 +2,50 @@
 
 public abstract class Animal : IMarins
 {
-    private (int x, int y) _posicioInical;
-    private int _direccio; //2 down, 4 left, 6 right, 8 up
-    private char _sexe;
-    private bool _viu = true;
-    public void Mou()
+    private Random rnd = new();
+    protected (int x, int y) PosicioInical;
+    protected int Direccio; //2 down, 4 left, 6 right, 8 up
+    protected Genere Sexe;
+    public bool Viu { get; set; } = true;
+
+    public virtual void Mou()
     {
-        
+        switch (Direccio)
+        {
+            case 6:
+            {
+                PosicioInical.x++;
+                break;
+            }
+            case 4:
+            {
+                PosicioInical.x--;
+                break;
+            }
+            case 2:
+            {
+                PosicioInical.y++;
+                break;
+            }
+            case 8:
+            {
+                PosicioInical.y--;
+                break;
+            }
+        }
     }
 
-    public Animal((int x, int y) posicioInical, int direccio, char sexe)
+    public Animal((int x, int y) posicioInical, int direccio, int sexe)
     {
-        _posicioInical = posicioInical;
-        _direccio = direccio;
-        _sexe = sexe;
+        PosicioInical = posicioInical;
+        Direccio = direccio;
+        if (Sexe == null)
+        {
+            Sexe = Genere.Dona;
+        }
+        else
+        {
+            Sexe = (Genere)rnd.Next(1, 3);
+        }
     }
 }

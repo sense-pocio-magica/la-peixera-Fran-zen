@@ -2,7 +2,7 @@
 
 public abstract class Reproductor: Animal,IReprodueix
 {
-    protected Reproductor((int x, int y) posicioInical, int direccio, char sexe) : base(posicioInical, direccio, sexe)
+    protected Reproductor((int x, int y) posicioInical, int direccio, int sexe) : base(posicioInical, direccio, sexe)
     {
     }
 

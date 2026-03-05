@@ -2,10 +2,20 @@
 
 public class Tauro : Reproductor
 {
-    private int _tempsvida = 50;
+    private int _tempsvida;
 
-    public Tauro((int x, int y) posicioInical, int direccio, char sexe, int tempsvida) : base(posicioInical, direccio, sexe)
+    public Tauro((int x, int y) posicioInical, int direccio, int sexe) : base(posicioInical, direccio, sexe)
     {
-        _tempsvida = tempsvida;
+        _tempsvida = 50;
+    }
+
+    public override void Mou()
+    {
+        while (_tempsvida > 0)
+        {
+            base.Mou();
+        }
+
+        Viu = false;
     }
 }
