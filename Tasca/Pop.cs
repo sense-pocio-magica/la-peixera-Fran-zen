@@ -2,7 +2,7 @@
 
 public class Pop : Animal
 {
-    public Pop((int x, int y) posicioInical, int direccio, char sexe) : base(posicioInical, direccio, sexe)
+    public Pop((int x, int y) posicioInical, int direccio) : base(posicioInical, direccio, 0)
     {
     }
 }
