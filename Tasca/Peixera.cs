@@ -34,7 +34,48 @@ public class Peixera
 
     public string Resultat()
     {
+        foreach (var peixs in _peixos)
+        {
+            switch (peixs)
+            {
+                case Peix:
+                    _peix++;
+                    break;
+                case Tauro:
+                    _tauro++;
+                    break;
+                case Tortuga:
+                    _tortuga++;
+                    break;
+                case Pop:
+                    _pop++;
+                    break;
+            }
+        }
+        return $" Peixos: {_peix}, Taurons: {_tauro}, Tortuga: {_tortuga}, Pops: {_pop}";
+    }
+
+    public string Ronda()
+    {
         
-    };
-    
+        foreach (var peixs in _peixos)
+        {
+            switch (peixs)
+            {
+                case Peix:
+                    _peix++;
+                    break;
+                case Tauro:
+                    _tauro++;
+                    break;
+                case Tortuga:
+                    _tortuga++;
+                    break;
+                case Pop:
+                    _pop++;
+                    break;
+            }
+        }
+        return $" Peixos: {_peix}, Taurons: {_tauro}, Tortuga: {_tortuga}, Pops: {_pop}";
+    }
 }
