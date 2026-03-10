@@ -6,16 +6,15 @@ public class Tauro : Reproductor
 
     public Tauro((int x, int y) posicioInical, int direccio, int sexe) : base(posicioInical, direccio, sexe)
     {
-        _tempsvida = 50;
+        _tempsvida = 75;
     }
 
     public override void Mou()
     {
-        while (_tempsvida > 0)
+        if (_tempsvida > 0)
         {
             base.Mou();
         }
-
-        Viu = false;
+        else Viu = false;
     }
 }
