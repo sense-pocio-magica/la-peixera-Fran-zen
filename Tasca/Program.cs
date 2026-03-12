@@ -2,7 +2,7 @@
 
 internal class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         int[] animals = [10,2,3,2];
         Peixera peixera = new();
@@ -11,6 +11,6 @@ internal class Program
         {
             peixera.Ronda();
         }
-        //peixera.Resultat();
+        peixera.Resultat();
     }
 }

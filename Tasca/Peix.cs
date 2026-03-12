@@ -1,6 +1,6 @@
 ﻿namespace Tasca;
 
-public class Peix : Reproductor
+public class Peix : Animal
 {
     private (int x, int y) _posicioInical;
     private int _direccio; //2 down, 4 left, 6 right, 8 up
@@ -55,10 +55,14 @@ public class Peix : Reproductor
             }
         }
     }
-
-    public Animal? Reprodueix(int direccio1, int direccio2, Animal p1 ,Animal p2)
+    
+    public override void Interactuar(Animal altre, List<Animal> nous)
     {
+        if (altre is Peix a)
+        {
+            if (Sexe != a.Sexe) nous.Add(new Peix((_posicioInical.x,_posicioInical.y),rnd.Next(4),rnd.Next(1,3)));
+            else { Viu = false; a.Viu = false; }
+        }
 
-        return null;
     }
 }

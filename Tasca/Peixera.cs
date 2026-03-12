@@ -9,7 +9,7 @@ public class Peixera
     private Random rnd = new();
     public void Inicia(int[] animals)
     {
-        for (int i = 1; i <= animals[0]; i++)
+        for (int i = 0; i <= animals[0]; i++)
         {
             new Peix((rnd.Next(_estanc.x), rnd.Next(_estanc.y)), rnd.Next(4), 1);
             new Peix((rnd.Next(_estanc.x), rnd.Next(_estanc.y)),rnd.Next(4), 2);
@@ -55,27 +55,12 @@ public class Peixera
         return $" Peixos: {_peix}, Taurons: {_tauro}, Tortuga: {_tortuga}, Pops: {_pop}";
     }
 
-    public string Ronda()
+    public void Ronda()
     {
-        
-        foreach (var peixs in _peixos)
+
+        foreach (var peix in _peixos)
         {
-            switch (peixs)
-            {
-                case Peix:
-                    _peix++;
-                    break;
-                case Tauro:
-                    _tauro++;
-                    break;
-                case Tortuga:
-                    _tortuga++;
-                    break;
-                case Pop:
-                    _pop++;
-                    break;
-            }
+            peix.Mou();
         }
-        return $" Peixos: {_peix}, Taurons: {_tauro}, Tortuga: {_tortuga}, Pops: {_pop}";
     }
 }

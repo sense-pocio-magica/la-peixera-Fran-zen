@@ -2,7 +2,7 @@
 
 public abstract class Animal : IMarins
 {
-    private Random rnd = new();
+    public Random rnd = new();
     protected (int x, int y) PosicioInical;
     protected int Direccio; //2 down, 4 left, 6 right, 8 up
     protected Genere Sexe;
@@ -39,13 +39,7 @@ public abstract class Animal : IMarins
     {
         PosicioInical = posicioInical;
         Direccio = direccio;
-        if (Sexe == null)
-        {
-            Sexe = Genere.Dona;
-        }
-        else
-        {
-            Sexe = (Genere)rnd.Next(1, 3);
-        }
+        Sexe = (Genere)rnd.Next(1, 3);
     }
+    public abstract void Interactuar(Animal altre, List<Animal> nous);
 }
